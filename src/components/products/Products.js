@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Typography, Grid, Card, CardHeader, CardContent, CardActions, IconButton } from '@material-ui/core';
 import CategoryViewer from '../categories/Categories.js';
 
@@ -8,8 +8,14 @@ import { connect } from 'react-redux'; // this ensures that we are connected to 
 // import { inactive, active } from '../../store/categories.js';
 import { getProducts } from '../../store/products.js'
 import { addToCart } from '../../store/cart.js';
+import { loadProducts } from '../../store/products.js';
 
-const productViewer = props => {
+const ProductViewer = props => {
+
+  useEffect(() => {
+    props.loadProducts();
+  }, []);
+
   return (
     <>
       {/* add description and render conditionally. make utility component for IF? */}
@@ -17,7 +23,7 @@ const productViewer = props => {
       <Grid container justify="center" spacing={5}>
         {/* {console.log(props)} */}
         {props.products.productList.map((product, i) => {
-          if (product.category === props.activeCategory) {
+          if (product.category === props.activeCategory.toLowerCase()) {
 
             return (
               <Grid item key={i}>
@@ -54,7 +60,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
   getProducts,
-  addToCart
+  addToCart,
+  loadProducts,
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(productViewer);
+export default connect(mapStateToProps, mapDispatchToProps)(ProductViewer);
