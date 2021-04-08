@@ -1,4 +1,16 @@
 div .banana {
   color: darkblue;
-  margin-left: 600px;
+  // margin-left: 600px;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+#chimp {
+  display: grid;
+  grid-template-columns: 75% 25%;
+}
+
+#monkey {
+  overflow: auto;
+  grid-column: 2;
 }
