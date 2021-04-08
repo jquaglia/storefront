@@ -1,4 +1,4 @@
-# LAB - Combined Reducers
+# LAB - Redux - Asynchronous Actions
 
 ## Link to Deployed Site
 
@@ -6,7 +6,7 @@
 
 [Link to Deployed App](https://admiring-boyd-f6efc0.netlify.app/)
 
-[Link to PR](https://github.com/jquaglia/storefront/pull/2)
+[Link to PR](https://github.com/jquaglia/storefront/pull/3)
 
 ## Phase 1 Requirements
 
@@ -33,6 +33,16 @@ The user stories from Phase 1 remain unchanged. For this phase, we are now addin
 - As a user, I want to change the quantity of items I intend to purchase in my shopping cart
 
 - As a user, I want to be able to remove an item from my shopping cart
+
+## Phase 3 Requirements
+
+In phase 3, we will be connecting our Virtual Store to a live API so that our data is persistent and able to be separately managed.
+
+The user stories from Phases 1 and 2 remain unchanged. For this phase, we are now adding the following new user stories to meet the new requirements.
+
+- As a user, I want to interact with live inventory so that I have confidence that the displayed products are in stock
+
+- As a user, I want to know to that when I add an item to my cart, that it is removed from inventory so that no other users can purchase it
 
 ## Collaborators
 
