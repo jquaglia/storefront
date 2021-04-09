@@ -6,13 +6,11 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import { useSelector } from 'react-redux';
 
 
-
 const Cart = props => {
-const cart = useSelector(state => state.cart.cart);
-console.log(cart);
-
-
-
+  const cart = useSelector(state => state.cart.cart);
+  console.log(cart);
+  
+  
   return (
     <>
     <Card>

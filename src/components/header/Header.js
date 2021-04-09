@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, AppBar, Toolbar, Button } from '@material-ui/core';
+import { Typography, AppBar, Toolbar } from '@material-ui/core';
 import './header.scss';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { connect } from 'react-redux';
@@ -28,7 +28,7 @@ const Header = props => {
       <AppBar position='static'>
         <Toolbar>
           <NavLink activeClassName="selected" to="/" className='guacamole'>
-            <Typography variant="h2" component="h1" edge='start' className={classes.name} class='guacamole'>
+            <Typography variant="h2" component="h1" edge='start' className={`${classes.name} guacamole`}>
               OUR STORE
             </Typography>
           </NavLink>
