@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Typography, Grid, Card, CardHeader, CardContent, CardActions, IconButton } from '@material-ui/core';
 import CategoryViewer from '../categories/Categories.js';
-
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'; // this ensures that we are connected to our redux store
 
 // import directly from the store directory.
@@ -32,11 +32,16 @@ const ProductViewer = props => {
                   <CardContent>
                     <Typography component="p">$ {product.price}</Typography>
                   </CardContent>
+                  <CardContent>
+                    <Typography component="p">In Stock: {product.inStock}</Typography>
+                  </CardContent>
                   <CardActions>
                     <IconButton onClick={() => props.addToCart(product)}>
                       Add to cart
                     </IconButton>
-                    <IconButton>View details</IconButton>
+                    <IconButton component={Link} to={`/products/${product._id}`}>
+                      View details
+                    </IconButton>
                   </CardActions>
                 </Card>
               </Grid>

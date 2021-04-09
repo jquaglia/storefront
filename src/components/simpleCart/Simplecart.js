@@ -24,7 +24,7 @@ const SimpleCart = props => {
                     </IconButton>
                   </Card>
                 </>
-              )
+              );
             })}
           </CardContent>
         </Card>
