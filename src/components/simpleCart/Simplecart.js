@@ -14,17 +14,15 @@ const SimpleCart = props => {
           <CardContent>
             {props.cart.cart.map((product, i) => {
               return (
-                <>
-                  <Card>
-                    <Typography key={i} className='banana'>
-                      ${product.price} : {product.name}
-                    </Typography>
-                    <IconButton onClick={() => props.removeFromCart(product)}>
-                      <DeleteIcon />
-                    </IconButton>
-                  </Card>
-                </>
-              )
+                <Card key={i} >
+                  <Typography className='banana'>
+                    ${product.price} : {product.name}
+                  </Typography>
+                  <IconButton onClick={() => props.removeFromCart(product)}>
+                    <DeleteIcon />
+                  </IconButton>
+                </Card>
+              );
             })}
           </CardContent>
         </Card>

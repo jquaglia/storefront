@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { Typography, Grid, Card, CardHeader, CardContent, CardActions, IconButton } from '@material-ui/core';
 import CategoryViewer from '../categories/Categories.js';
-
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'; // this ensures that we are connected to our redux store
+// import { If } from '../if/If.js';
 
 // import directly from the store directory.
 // import { inactive, active } from '../../store/categories.js';
@@ -14,6 +15,7 @@ const ProductViewer = props => {
 
   useEffect(() => {
     props.loadProducts();
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -26,21 +28,28 @@ const ProductViewer = props => {
           if (product.category === props.activeCategory.toLowerCase()) {
 
             return (
+              // <If>
               <Grid item key={i}>
                 <Card>
                   <CardHeader title={product.name} />
                   <CardContent>
                     <Typography component="p">$ {product.price}</Typography>
                   </CardContent>
+                  <CardContent>
+                    <Typography component="p">In Stock: {product.inStock}</Typography>
+                  </CardContent>
                   <CardActions>
                     <IconButton onClick={() => props.addToCart(product)}>
                       Add to cart
                     </IconButton>
-                    <IconButton>View details</IconButton>
+                    <IconButton component={Link} to={`/details/${product._id}`}>
+                      View details
+                    </IconButton>
                   </CardActions>
                 </Card>
               </Grid>
             )
+            // </If>
           } else {
             return null;
           }
